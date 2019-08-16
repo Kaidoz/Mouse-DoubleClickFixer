@@ -35,8 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button_hide = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRight = new System.Windows.Forms.CheckBox();
+            this.checkBoxLeft = new System.Windows.Forms.CheckBox();
+            this.checkBoxAutoRun = new System.Windows.Forms.CheckBox();
+            this.label_count = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +71,7 @@
             // 
             // button_hide
             // 
-            this.button_hide.Location = new System.Drawing.Point(224, 26);
+            this.button_hide.Location = new System.Drawing.Point(224, 12);
             this.button_hide.Name = "button_hide";
             this.button_hide.Size = new System.Drawing.Size(75, 23);
             this.button_hide.TabIndex = 3;
@@ -84,31 +86,55 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseClick);
             // 
-            // checkBox1
+            // checkBoxRight
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(121, 29);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxRight.AutoSize = true;
+            this.checkBoxRight.Location = new System.Drawing.Point(121, 29);
+            this.checkBoxRight.Name = "checkBoxRight";
+            this.checkBoxRight.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRight.TabIndex = 4;
+            this.checkBoxRight.UseVisualStyleBackColor = true;
+            this.checkBoxRight.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
-            // checkBox2
+            // checkBoxLeft
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(79, 29);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxLeft.AutoSize = true;
+            this.checkBoxLeft.Location = new System.Drawing.Point(79, 29);
+            this.checkBoxLeft.Name = "checkBoxLeft";
+            this.checkBoxLeft.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxLeft.TabIndex = 5;
+            this.checkBoxLeft.UseVisualStyleBackColor = true;
+            this.checkBoxLeft.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // checkBoxAutoRun
+            // 
+            this.checkBoxAutoRun.AutoSize = true;
+            this.checkBoxAutoRun.Location = new System.Drawing.Point(229, 39);
+            this.checkBoxAutoRun.Name = "checkBoxAutoRun";
+            this.checkBoxAutoRun.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxAutoRun.TabIndex = 6;
+            this.checkBoxAutoRun.Text = "AutoRun";
+            this.checkBoxAutoRun.UseVisualStyleBackColor = true;
+            this.checkBoxAutoRun.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // label_count
+            // 
+            this.label_count.AutoSize = true;
+            this.label_count.Location = new System.Drawing.Point(175, 12);
+            this.label_count.Name = "label_count";
+            this.label_count.Size = new System.Drawing.Size(13, 13);
+            this.label_count.TabIndex = 7;
+            this.label_count.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 75);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label_count);
+            this.Controls.Add(this.checkBoxAutoRun);
+            this.Controls.Add(this.checkBoxLeft);
+            this.Controls.Add(this.checkBoxRight);
             this.Controls.Add(this.button_hide);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -116,6 +142,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Mouse-DoubleClickFixer";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,8 +156,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_hide;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxRight;
+        private System.Windows.Forms.CheckBox checkBoxLeft;
+        private System.Windows.Forms.CheckBox checkBoxAutoRun;
+        private System.Windows.Forms.Label label_count;
     }
 }
 
